@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "ar-marker-2d": "../components/ar-marker-2d/ar-marker-2d"
+  },
+  "renderer": "webview"
+}

@@ -1,0 +1,1 @@
+<ar-marker-2d id="ar-marker-2d" width="{{arCompo.width}}" height="{{arCompo.height}}" style="display:block;width:{{arCompo.styleWidth}}px;height:{{arCompo.styleHeight}}px;"></ar-marker-2d>

@@ -1,0 +1,5 @@
+<custom-navbar cover icon-color="white" title="这里是标题" bind:back="">
+  <view slot="icon">icon-bar</view>
+  <view slot="title">这里是标题</view>
+</custom-navbar>
+<view>Tesla</view>

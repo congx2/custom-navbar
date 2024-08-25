@@ -1,0 +1,23 @@
+<view class="cumstom-navbar" style="background:{{backgroundColor}};">
+  <view class="status-bar" style="height:{{statusBarHeight}}px;" />
+  <view class="content-bar" style="height:{{contentBarHeight}}px;">
+    <view class="icon-bar" style="width:{{iconBarWidth}}px;">
+      <block wx:if="{{useSlotIconBox}}">
+        <slot name="icon"></slot>
+      </block>
+      <view wx:else class="{{useMenuIconBox ? 'left-menu-btn' : 'icons'}} bg-{{iconColor === 'white' ? 'black' : 'white'}}" style="{{leftMenuBtnStyle}}">
+        <view wx:for="{{icons}}" wx:key="index" class="menu-icon icon-{{item.name}} {{item.name}}-first" data-index="{{index}}" bind:tap="onTapMenuIcon">
+          <image src="{{item.icon}}" class="icon-pic {{item.name}}" style="width:{{item.width}}px;height:{{item.height}}px;" />
+        </view>
+      </view>
+    </view>
+    <view class="title-bar" style="width:{{titleBarWidth}}px;margin:0 {{menuBtnRect.rightGap}}px;color:{{titleColor}};">
+      <block wx:if="{{useTitleSlot}}">
+        <slot name="title" />
+      </block>
+      <view wx:else class="title">{{titleText}}</view>
+    </view>
+    <view class="right-menu-placeholder" style="width:{{rightMenuBarWidth}}px;"></view>
+  </view>
+</view>
+<view wx:if="{{!cover}}" class="cumstom-navbar-placeholder" style="height:{{statusBarHeight + contentBarHeight}}px;"></view>

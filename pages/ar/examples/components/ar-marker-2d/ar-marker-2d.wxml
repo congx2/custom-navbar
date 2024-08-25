@@ -1,0 +1,10 @@
+<xr-scene ar-system="modes:Marker;" bind:ready="onSceneReady" bind:ar-ready="onARReady">
+  <xr-node wx:if="{{}}">
+    <xr-ar-tracker wx:for="{{trackers}}" wx:key="index" id="tracker-{{index + 1}}" mode="Marker" src="{{item.src}}" />
+  </xr-node>
+  <xr-camera is-ar-camera id="camera" node-id="camera" clear-color="0.925 0.925 0.925 1" background="ar">
+    <!-- 将模型放在相机内部，相当于是放在视图空间里面，只需要z轴正方向移动，就是远离相机 -->
+    <!-- 放ar相机内部，这个流程有bug，感觉是vk返回的矩阵里面有负数，准备排查 -->
+    <xr-shadow id="root"></xr-shadow>
+  </xr-camera>
+</xr-scene>
